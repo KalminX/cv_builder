@@ -5,14 +5,21 @@ aptPkgs = [
     "libpangocairo-1.0-0",
     "libpangoft2-1.0-0",
     "libcairo2",
-    "libgdk-pixbuf2.0-0",
+    "libgdk-pixbuf-2.0-0",
     "libffi-dev",
-    "libgobject-2.0-0",  # Added for GLib
-    "libglib2.0-0"       # Added for GLib (dependency of libgobject-2.0-0)
+    "libglib2.0-0",       # Provides libgobject-2.0-0
+    "libgirepository-1.0-1" # Optional, for GObject introspection
+]
+cmds = [
+    "apt-get update && apt-get install -y --no-install-recommends $NIXPACKS_APT_PKGS",
+    "ldconfig"  # Update linker cache
 ]
 
 [phases.build]
-cmds = ["pip install -r requirements.txt"]
+cmds = [
+    "pip install -r requirements.txt",
+    "ldconfig -p | grep libgobject || echo 'libgobject not found'"  # Debug library availability
+]
 
 [start]
 cmd = "gunicorn app:app"
