@@ -20,7 +20,6 @@
 ## 🚀 Live Demo
 
 Try the CV Builder live at: **[https://cv-builder.up.railway.app/](https://cv-builder.up.railway.app/)**  
-*Note: Replace the above link with your actual deployed app URL after deployment.*
 
 ## 📸 Screenshots
 
