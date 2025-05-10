@@ -36,9 +36,6 @@ COPY . .
 # Install Python dependencies, building WeasyPrint from source
 RUN pip install -r requirements.txt
 
-# Copy test script
-COPY test_weasyprint.py .
-
 # Set LD_LIBRARY_PATH to ensure libraries are found
 ENV LD_LIBRARY_PATH=/usr/lib:/usr/lib/x86_64-linux-gnu
 
