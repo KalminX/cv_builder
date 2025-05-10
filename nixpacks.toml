@@ -1,14 +1,24 @@
 [phases.setup]
 aptPkgs = [
-    # WeasyPrint dependencies
-    "libpango-1.0-0",
-    "libpangocairo-1.0-0",
-    "libpangoft2-1.0-0",
-    "libcairo2",
-    "libgdk-pixbuf-2.0-0",
-    "libffi-dev",
-    "libglib2.0-0",       # Provides libgobject-2.0-0
-    "libgirepository-1.0-1" # Optional, for GObject introspection
+    # WeasyPrint runtime dependencies
+    "libglib2.0-0",        # Provides libgobject-2.0.so.0 (for Pango)
+    "libpango-1.0-0",      # Pango text layout
+    "libpangocairo-1.0-0", # Pango Cairo integration
+    "libpangoft2-1.0-0",   # Pango FreeType2 support
+    "libcairo2",           # Cairo rendering
+    "libgdk-pixbuf-2.0-0", # Image handling
+    "libharfbuzz0b",       # Text shaping
+    "libfontconfig1",      # Font configuration
+    # Development dependencies for building Python packages
+    "python3-dev",
+    "gcc",
+    "g++",
+    "libc-dev",
+    "libffi-dev",          # For cffi
+    "zlib1g-dev",          # For Pillow
+    "libjpeg-dev",         # For Pillow
+    "libopenjp2-7-dev",    # For Pillow
+    "libwebp-dev"          # For Pillow
 ]
 cmds = [
     "apt-get update && apt-get install -y --no-install-recommends $NIXPACKS_APT_PKGS",
@@ -17,8 +27,8 @@ cmds = [
 
 [phases.build]
 cmds = [
-    "pip install -r requirements.txt",
-    "ldconfig -p | grep libgobject || echo 'libgobject not found'"  # Debug library availability
+    "pip install --no-binary weasyprint -r requirements.txt", # Build WeasyPrint from source
+    "ldconfig -p | grep libgobject || echo 'libgobject not found'"  # Debug
 ]
 
 [start]
