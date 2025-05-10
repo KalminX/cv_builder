@@ -240,4 +240,4 @@ def builder(template_name):
     return render_template("builder.html", template_name=template_name, css_file=css_file)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
