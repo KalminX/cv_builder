@@ -1,6 +1,5 @@
 # CV Builder
 
-![CV Builder Banner](static/images/cv-builder-banner.png)  
 *Create professional CVs with ease using live previews and customizable templates.*
 
 [![Python](https://img.shields.io/badge/Python-3.12-blue)](https://www.python.org/)  
@@ -26,15 +25,15 @@ Try the CV Builder live at: **[https://cv-builder.up.railway.app/](https://cv-bu
 ## 📸 Screenshots
 
 ### Template Selection
-![Template Selection](static/images/screenshot-template-selection.png)  
+![Template Selection](static/images/choose_template-min.png)  
 *Choose from a variety of CV templates with image previews.*
 
 ### CV Builder with Live Preview
-![CV Builder](static/images/screenshot-cv-builder.png)  
+![CV Builder](static/images/preview_page-min.png)  
 *Enter your details and see the CV update in real-time.*
 
 ### Downloaded PDF
-![Downloaded PDF](static/images/screenshot-pdf-output.png)  
+![Downloaded PDF](static/images/file_downloaded-min.png)  
 *Download your CV as a styled PDF.*
 
 ## 🛠️ Technologies Used
