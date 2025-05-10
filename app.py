@@ -229,7 +229,7 @@ def generate_pdf():
     cv_data['template'] = data['templateKey']
     rendered = render_template('cv_template.html', cv_data=cv_data, template_style=cv_data["template"])
     pdf_io = io.BytesIO()
-    css_path = os.path.join(app.root_path, 'static', 'css', f'{cv_data['template']}.css')
+    css_path = os.path.join(app.root_path, 'static', 'css', f"{cv_data['template']}.css")
     HTML(string=rendered, base_url=request.base_url).write_pdf(pdf_io, stylesheets=[CSS(filename=css_path)])
     pdf_io.seek(0)
     return send_file(pdf_io, download_name=f"{cv_data['header']['fullName']}_cv.pdf", as_attachment=True)
