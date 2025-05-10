@@ -1,0 +1,74 @@
+body {
+  font-family: "Georgia", serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #e8ecef;
+  color: #333;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border: 1px solid #ccc;
+}
+.header {
+  text-align: center;
+  border-bottom: 1px solid #333;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+.header h1 {
+  margin: 0;
+  font-size: 26px;
+  color: #333;
+}
+.header p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #666;
+}
+.section {
+  margin-bottom: 20px;
+}
+.section h2 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.section p,
+.section ul {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.section ul {
+  padding-left: 20px;
+}
+.section ul li {
+  margin-bottom: 5px;
+}
+footer {
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+footer a {
+  color: #333;
+  text-decoration: none;
+}
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+  .header h1 {
+    font-size: 22px;
+  }
+  .section h2 {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select CV Template</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #1a2a44;
+            margin: 2rem 0;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .template {
+            width: 100%;
+            aspect-ratio: 5/4;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+            border: 3px solid transparent;
+        }
+
+        .template:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            border: 3px solid #4a90e2;
+        }
+
+        .template:active {
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Choose Your CV Template</h1>
+    <div class="grid">
+        <img src="/static/images/template1.png" class="template" onclick="selectTemplate('template1')" alt="Template 1">
+        <img src="/static/images/template2.png" class="template" onclick="selectTemplate('template2')" alt="Template 2">
+        <img src="/static/images/template3.png" class="template" onclick="selectTemplate('template3')" alt="Template 3">
+        <img src="/static/images/template4.png" class="template" onclick="selectTemplate('template4')" alt="Template 4">
+    </div>
+
+    <script>
+        function selectTemplate(templateName) {
+            localStorage.setItem("selectedTemplate", templateName);
+            window.location.href = `/builder/${templateName}`;
+        }
+    </script>
+</body>
+
+</html>
