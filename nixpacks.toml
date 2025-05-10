@@ -1,11 +1,14 @@
 [phases.setup]
 aptPkgs = [
+    # WeasyPrint dependencies
     "libpango-1.0-0",
     "libpangocairo-1.0-0",
     "libpangoft2-1.0-0",
     "libcairo2",
     "libgdk-pixbuf2.0-0",
-    "libffi-dev"
+    "libffi-dev",
+    "libgobject-2.0-0",  # Added for GLib
+    "libglib2.0-0"       # Added for GLib (dependency of libgobject-2.0-0)
 ]
 
 [phases.build]
