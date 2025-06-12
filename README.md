@@ -19,7 +19,7 @@
 
 ## 🚀 Live Demo
 
-Try the CV Builder live at: **[https://cv-builder.up.railway.app/](https://cv-builder.up.railway.app/)**  
+Try the CV Builder live at: **[cv_builder](https://cv-builder-f5dcc72b4d1c.herokuapp.com/)**  
 
 ## 📸 Screenshots
 
